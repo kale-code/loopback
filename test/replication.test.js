@@ -1199,7 +1199,7 @@ describe('Replication / Change APIs', function() {
             expect(change).to.have.property('modelName', SourceModel.modelName);
             // NOTE(bajtos) Change.modelId is always String
             // regardless of the type of the changed model's id property
-            expect(change).to.have.property('modelId', '' + id);
+            expect(change).to.have.property('modelId', String(id));
 
             cb();
           });
