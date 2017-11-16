@@ -66,11 +66,9 @@ describe('Authorization scopes', () => {
 
   it('allows invocation when at least one method scope is matched', () => {
     givenRemoteMethodWithCustomScope(['read', 'write']);
-    return givenScopedToken(['read', 'execute']).then(() => {
-      return request.get('/users/scoped')
+    return givenScopedToken(['read', 'execute']).then(() => request.get('/users/scoped')
         .set('Authorization', scopedToken.id)
-        .expect(204);
-    });
+        .expect(204));
   });
 
   function givenAppAndRequest() {
