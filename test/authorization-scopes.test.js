@@ -113,8 +113,8 @@ describe('Authorization scopes', () => {
       .then(t => regularToken = t);
   }
 
-  function givenScopedToken() {
-    const scopes = arguments[0] || [CUSTOM_SCOPE];
+  function givenScopedToken(...params) {
+    const scopes = params[0] || [CUSTOM_SCOPE];
     return testUser.accessTokens.create({ttl: 60, scopes})
       .then(t => scopedToken = t);
   }
