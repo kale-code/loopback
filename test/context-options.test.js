@@ -393,8 +393,8 @@ describe('OptionsFromRemotingContext', function() {
     });
   }
 
-  function observeOptionsOnAccess() {
-    var Model = arguments[0] || Product;
+  function observeOptionsOnAccess(...params) {
+    var Model = params[0] || Product;
     Model.observe('access', function(ctx, next) {
       actualOptions = ctx.options;
       next();
