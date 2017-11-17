@@ -385,8 +385,8 @@ describe('OptionsFromRemotingContext', function() {
     });
   }
 
-  function observeOptionsBeforeDelete() {
-    var Model = arguments[0] || Product;
+  function observeOptionsBeforeDelete(...params) {
+    var Model = params[0] || Product;
     Model.observe('before delete', function(ctx, next) {
       actualOptions = ctx.options;
       next();
