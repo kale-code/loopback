@@ -12,8 +12,7 @@ exports.logAllServerErrors = function(app) {
 exports.logServerErrorsOtherThan = function(statusCode, app) {
   app.use((err, req, res, next) => {
     if ((err.statusCode || 500) !== statusCode) {
-      console.log('Unhandled error for request %s %s: %s',
-        req.method, req.url, err.stack || err);
+      
     }
     res.statusCode = err.statusCode || 500;
     res.json(err);
