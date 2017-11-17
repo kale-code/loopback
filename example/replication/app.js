@@ -139,7 +139,6 @@ function run(steps) {
   setInterval(function() {
     var step = steps.shift();
     if (step) {
-      console.log(step.name);
       step();
     }
   }, SPEED);
