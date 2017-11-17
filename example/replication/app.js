@@ -129,7 +129,7 @@ function list(model, msg) {
   console.log(msg);
   model.find(function(err, items) {
     items.forEach(function(item) {
-      console.log(' -', item.name);
+      
     });
     console.log();
   });
