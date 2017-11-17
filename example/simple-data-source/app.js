@@ -20,8 +20,8 @@ Color.create({name: 'red'});
 Color.create({name: 'green'});
 Color.create({name: 'blue'});
 
-Color.all(function() {
-  console.log(arguments);
+Color.all(function(...params) {
+  console.log(params);
 });
 
 app.listen(3000);
