@@ -21,7 +21,7 @@ Color.create({name: 'green'});
 Color.create({name: 'blue'});
 
 Color.all(function(...params) {
-  console.log(params);
+  
 });
 
 app.listen(3000);
