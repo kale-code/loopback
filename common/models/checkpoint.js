@@ -54,7 +54,7 @@ module.exports = function(Checkpoint) {
    * @param {Object} checkpoint The current checkpoint
    */
   Checkpoint.bumpLastSeq = function(cb) {
-    var Checkpoint = this;
+    let Checkpoint = this;
     Checkpoint._getSingleton(function(err, cp) {
       if (err) return cb(err);
       var originalSeq = cp.seq;
