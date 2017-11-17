@@ -137,9 +137,7 @@ describe('users - integration', function() {
             })
             .expect(204);
         })
-        .then(() => {
-          return User.findById(this.user.id);
-        })
+        .then(() => User.findById(this.user.id))
         .then(user => {
           return user.hasPassword('new password');
         })
