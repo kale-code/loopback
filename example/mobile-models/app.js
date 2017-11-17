@@ -47,6 +47,6 @@ function(err, result) {
   console.log(result.toObject());
 
   result.resetKeys(function(err, result) {
-    console.log(result.toObject());
+    
   });
 });
