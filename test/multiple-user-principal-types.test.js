@@ -655,12 +655,10 @@ describe('Multiple users with custom principalType', function() {
         .set('Authorization', resetToken.id)
         .send({newPassword: 'new-pass'})
         .expect(403)
-        .then(() => {
-          return supertest(app)
+        .then(() => supertest(app)
             .post('/AnotherUsers/login')
             .send(commonCredentials)
-            .expect(200);
-        });
+            .expect(200));
     });
 
     function givenResetPasswordTokenForOneUser() {
