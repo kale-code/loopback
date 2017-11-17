@@ -227,7 +227,7 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('skip-karma-on-windows', function() {
-    console.log('*** SKIPPING PHANTOM-JS BASED TESTS ON WINDOWS ***');
+    
   });
 
   grunt.registerTask('e2e', ['e2e-server', 'karma:e2e']);
