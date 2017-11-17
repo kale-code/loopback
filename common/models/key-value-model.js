@@ -164,8 +164,8 @@ module.exports = function(KeyValueModel) {
    *   inherited correctly, see bug at
    *   https://github.com/strongloop/loopback/issues/2350
    */
-  KeyValueModel.setup = function() {
-    KeyValueModel.base.setup.apply(this, arguments);
+  KeyValueModel.setup = function(...params) {
+    KeyValueModel.base.setup.apply(this, params);
 
     this.remoteMethod('get', {
       accepts: {
