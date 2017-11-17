@@ -83,12 +83,12 @@ describe('Authorization scopes', () => {
     User = app.models.User;
   }
 
-  function givenRemoteMethodWithCustomScope() {
+  function givenRemoteMethodWithCustomScope(...params) {
     // Delete any previously registered instance of the method "scoped"
     User.sharedClass._methods = User.sharedClass._methods
       .filter(m => m.name !== 'scoped');
 
-    const accessScopes = arguments[0] || [CUSTOM_SCOPE];
+    const accessScopes = params[0] || [CUSTOM_SCOPE];
     User.scoped = function(cb) { cb(); };
     User.remoteMethod('scoped', {
       accessScopes,
