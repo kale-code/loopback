@@ -130,7 +130,6 @@ function list(model, msg) {
     items.forEach(function(item) {
       
     });
-    console.log();
   });
 }
 
