@@ -44,8 +44,8 @@ _beforeEach.withApp = function(app) {
   });
 };
 
-_beforeEach.withArgs = function() {
-  var args = Array.prototype.slice.call(arguments, 0);
+_beforeEach.withArgs = function(...params) {
+  var args = params;
   beforeEach(function() {
     this.args = args;
   });
