@@ -24,7 +24,7 @@ CartItem.create([
 ]);
 
 CartItem.sum(1, function(err, total) {
-  console.log(total);
+  
 });
 
 server.listen(3000);
