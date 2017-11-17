@@ -57,11 +57,9 @@ describe('Authorization scopes', () => {
         .expect(200);
     });
 
-    it('allows invocation of custom-scoped method', () => {
-      return request.get('/users/scoped')
+    it('allows invocation of custom-scoped method', () => request.get('/users/scoped')
         .set('Authorization', scopedToken.id)
-        .expect(204);
-    });
+        .expect(204));
   });
 
   it('allows invocation when at least one method scope is matched', () => {
