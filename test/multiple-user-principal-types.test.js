@@ -634,8 +634,7 @@ describe('Multiple users with custom principalType', function() {
     let resetToken;
     beforeEach(givenResetPasswordTokenForOneUser);
 
-    it('sets password when the access token belongs to the user', () => {
-      return supertest(app)
+    it('sets password when the access token belongs to the user', () => supertest(app)
         .post('/OneUsers/reset-password')
         .set('Authorization', resetToken.id)
         .send({newPassword: 'new-pass'})
@@ -645,8 +644,7 @@ describe('Multiple users with custom principalType', function() {
             .post('/OneUsers/login')
             .send({email: commonCredentials.email, password: 'new-pass'})
             .expect(200);
-        });
-    });
+        }));
 
     it('fails when the access token belongs to a different user mode', () => {
       logServerErrorsOtherThan(403, app);
